@@ -63,11 +63,10 @@ unique_stores: list = df_train['store'].unique()
 print(f"There is {len(unique_stores)} diferent types of stores.\n")
 print(f"This stores are: {unique_stores}")
 
-#transformando o campo de data para o tipo date (está como object)
+# Converting the date field to date type (currently it is an object)
 df_train['date'] = pd.to_datetime(df_train['date']) #train
 df_test['date'] = pd.to_datetime(df_test['date']) #test
-# transformando o campo de item e store em tipo categórico
-
+# Converting the item and store fields to categorical type
 # train
 df_train['item'] = df_train['item'].astype('category')
 df_train['store'] = df_train['store'].astype('category')
